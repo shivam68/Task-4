@@ -1,0 +1,221 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "id": "f7d44a2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import cv2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "581805b2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "photo1 = cv2.imread('image_1.jpg')\n",
+    "cv2.imshow(\"photo\" , photo1)\n",
+    "cv2.waitKey()\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "id": "73413178",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "photo2 = cv2.imread('image_2.jpg')\n",
+    "cv2.imshow(\"photo2\" , photo2)\n",
+    "cv2.waitKey()\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 78,
+   "id": "9cd1e2ac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "photo3 = cv2.imread('image_3.png')\n",
+    "cv2.imshow(\"photo3\" , photo3)\n",
+    "cv2.waitKey()\n",
+    "cv2.destroyAllWindows() "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "id": "6820bdad",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "photo4 = cv2.imread('image_4.jpg')\n",
+    "cv2.imshow(\"photo4\" , photo4)\n",
+    "cv2.waitKey()\n",
+    "cv2.destroyAllWindows() "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "id": "310a4ee0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(853, 480, 3)"
+      ]
+     },
+     "execution_count": 82,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "photo1.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "id": "184e1b57",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(853, 480, 3)"
+      ]
+     },
+     "execution_count": 83,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "photo2.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "id": "0aa21b7f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(512, 480, 3)"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "photo3.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "id": "c2087bf0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(341, 480, 3)"
+      ]
+     },
+     "execution_count": 85,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "photo4.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "id": "770f9a27",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "id": "2985182b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "last_image = numpy.vstack((photo3,photo4))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "id": "89a8b79a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "end_result = numpy.concatenate((photo1, photo2, last_image), axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7d2d9c7e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cv2.imshow(\"photo\" , end_result)\n",
+    "cv2.waitKey()\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "24eec3ed",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
